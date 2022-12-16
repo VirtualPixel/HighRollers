@@ -6,11 +6,25 @@
 //
 
 import SwiftUI
+import WrappingHStack
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+        TabView {
+            RollView()
+                .tabItem {
+                    Label("Roll", systemImage: "dice")
+                }
             
+            HistoryView()
+                .tabItem {
+                    Label("History", systemImage: "book")
+                }
+            
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gearshape")
+                }
         }
     }
 }

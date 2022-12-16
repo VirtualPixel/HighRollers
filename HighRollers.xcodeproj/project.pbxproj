@@ -7,15 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5730AF79294CFB6300B0F706 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF78294CFB6300B0F706 /* RollView.swift */; };
+		5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */; };
+		5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7C294CFD1300B0F706 /* HistoryView.swift */; };
+		5730AF7F294CFD5200B0F706 /* HistoryView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7E294CFD5200B0F706 /* HistoryView-ViewModel.swift */; };
+		5730AF81294CFD7900B0F706 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF80294CFD7900B0F706 /* SettingsView.swift */; };
+		5730AF83294CFDD500B0F706 /* SettingsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */; };
 		575EDA962947CE1800BB550D /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575EDA952947CE1800BB550D /* Shape.swift */; };
 		57D97A3C2947481F00F9A921 /* HighRollersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A3B2947481F00F9A921 /* HighRollersApp.swift */; };
 		57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A3D2947481F00F9A921 /* ContentView.swift */; };
 		57D97A402947482000F9A921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A3F2947482000F9A921 /* Assets.xcassets */; };
 		57D97A432947482000F9A921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A422947482000F9A921 /* Preview Assets.xcassets */; };
 		57D97A4D294748B600F9A921 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A4C294748B600F9A921 /* Die.swift */; };
+		57FE4FC5294CBE3F00D10C04 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 57FE4FC4294CBE3F00D10C04 /* WrappingHStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5730AF78294CFB6300B0F706 /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
+		5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RollView-ViewModel.swift"; sourceTree = "<group>"; };
+		5730AF7C294CFD1300B0F706 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		5730AF7E294CFD5200B0F706 /* HistoryView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryView-ViewModel.swift"; sourceTree = "<group>"; };
+		5730AF80294CFD7900B0F706 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView-ViewModel.swift"; sourceTree = "<group>"; };
 		575EDA952947CE1800BB550D /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		57D97A382947481F00F9A921 /* HighRollers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighRollers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D97A3B2947481F00F9A921 /* HighRollersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighRollersApp.swift; sourceTree = "<group>"; };
@@ -30,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57FE4FC5294CBE3F00D10C04 /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				57D97A3D2947481F00F9A921 /* ContentView.swift */,
+				5730AF78294CFB6300B0F706 /* RollView.swift */,
 				57D97A4C294748B600F9A921 /* Die.swift */,
+				5730AF7C294CFD1300B0F706 /* HistoryView.swift */,
+				5730AF80294CFD7900B0F706 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +110,9 @@
 		57D97A4B2947486800F9A921 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */,
+				5730AF7E294CFD5200B0F706 /* HistoryView-ViewModel.swift */,
+				5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -113,6 +133,9 @@
 			dependencies = (
 			);
 			name = HighRollers;
+			packageProductDependencies = (
+				57FE4FC4294CBE3F00D10C04 /* WrappingHStack */,
+			);
 			productName = HighRollers;
 			productReference = 57D97A382947481F00F9A921 /* HighRollers.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +164,9 @@
 				Base,
 			);
 			mainGroup = 57D97A2F2947481F00F9A921;
+			packageReferences = (
+				57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
+			);
 			productRefGroup = 57D97A392947481F00F9A921 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,9 +193,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */,
 				57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */,
 				57D97A4D294748B600F9A921 /* Die.swift in Sources */,
+				5730AF81294CFD7900B0F706 /* SettingsView.swift in Sources */,
+				5730AF83294CFDD500B0F706 /* SettingsView-ViewModel.swift in Sources */,
+				5730AF79294CFB6300B0F706 /* RollView.swift in Sources */,
+				5730AF7F294CFD5200B0F706 /* HistoryView-ViewModel.swift in Sources */,
 				57D97A3C2947481F00F9A921 /* HighRollersApp.swift in Sources */,
+				5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */,
 				575EDA962947CE1800BB550D /* Shape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,6 +403,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/WrappingHStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57FE4FC4294CBE3F00D10C04 /* WrappingHStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
+			productName = WrappingHStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57D97A302947481F00F9A921 /* Project object */;
 }
