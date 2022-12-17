@@ -11,7 +11,10 @@ struct SettingsView: View {
     @StateObject private var viewModel: ViewModel
     
     var body: some View {
-        Text("Settings")
+        NavigationView {
+            Text("Settings")
+                .navigationTitle("Settings")
+        }
     }
     
     init() {

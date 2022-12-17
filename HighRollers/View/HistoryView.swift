@@ -11,7 +11,10 @@ struct HistoryView: View {
     @StateObject private var viewModel: ViewModel
     
     var body: some View {
-        Text("History")
+        NavigationView {
+            Text("History")
+                .navigationTitle("Roll History")
+        }
     }
     
     init() {

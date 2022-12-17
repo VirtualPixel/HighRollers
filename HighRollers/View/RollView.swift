@@ -13,9 +13,14 @@ struct RollView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Die()
-                    .padding()
+                Button {
+                    viewModel.randomize()
+                } label: {
+                    Die(result: viewModel.value)
+                        .padding()
+                }
             }
+            .navigationTitle("Roll the Dice")
         }
     }
     

@@ -54,6 +54,7 @@ struct DieResult: View {
             switch isNumeric {
             case true:
                 Text("\(number)")
+                    .foregroundColor(.black)
             case false:
                 switch number {
                 case 1:
@@ -70,6 +71,7 @@ struct DieResult: View {
                     six()
                 default:
                     Text("\(number)")
+                        .foregroundColor(.black)
                 }
             }
         }
@@ -177,5 +179,6 @@ struct DieResult: View {
         Image(systemName: "circle.fill")
             .resizable()
             .frame(width: dotWidth, height: dotWidth)
+            .foregroundColor(.black)
     }
 }
