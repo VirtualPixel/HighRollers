@@ -14,6 +14,7 @@
 		5730AF81294CFD7900B0F706 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF80294CFD7900B0F706 /* SettingsView.swift */; };
 		5730AF83294CFDD500B0F706 /* SettingsView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */; };
 		575EDA962947CE1800BB550D /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575EDA952947CE1800BB550D /* Shape.swift */; };
+		579A8A1D294FFC7B00BAB964 /* Roll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579A8A1C294FFC7B00BAB964 /* Roll.swift */; };
 		57D97A3C2947481F00F9A921 /* HighRollersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A3B2947481F00F9A921 /* HighRollersApp.swift */; };
 		57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A3D2947481F00F9A921 /* ContentView.swift */; };
 		57D97A402947482000F9A921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A3F2947482000F9A921 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		5730AF80294CFD7900B0F706 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView-ViewModel.swift"; sourceTree = "<group>"; };
 		575EDA952947CE1800BB550D /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		579A8A1C294FFC7B00BAB964 /* Roll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roll.swift; sourceTree = "<group>"; };
 		57D97A382947481F00F9A921 /* HighRollers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HighRollers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D97A3B2947481F00F9A921 /* HighRollersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighRollersApp.swift; sourceTree = "<group>"; };
 		57D97A3D2947481F00F9A921 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				575EDA952947CE1800BB550D /* Shape.swift */,
+				579A8A1C294FFC7B00BAB964 /* Roll.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				5730AF79294CFB6300B0F706 /* RollView.swift in Sources */,
 				5730AF7F294CFD5200B0F706 /* HistoryView-ViewModel.swift in Sources */,
 				57D97A3C2947481F00F9A921 /* HighRollersApp.swift in Sources */,
+				579A8A1D294FFC7B00BAB964 /* Roll.swift in Sources */,
 				5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */,
 				575EDA962947CE1800BB550D /* Shape.swift in Sources */,
 			);
