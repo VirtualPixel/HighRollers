@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct Die: View {
+struct Die: View, Identifiable {
+    var id = UUID()
     var result = Int.random(in: 1...10)
     var isNumeric = false
     let dieColor: [Color] = [Color(UIColor(red: 0.97, green: 0.96, blue: 0.93, alpha: 1.00)), Color(UIColor(red: 0.84, green: 0.81, blue: 0.69, alpha: 1.00)), Color(UIColor(red: 0.42, green: 0.38, blue: 0.27, alpha: 1.00))]

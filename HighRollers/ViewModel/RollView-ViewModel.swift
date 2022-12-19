@@ -10,11 +10,16 @@ import SwiftUI
 
 extension RollView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var range: ClosedRange<Int>
+        @Published var range = 1...6
         @Published var maxDie = 1...20
         @Published var rolls = 1
         @Published var selectedDieSides = 6
-        @State private var engine: CHHapticEngine?
+        //@Published var rollValues: [Roll] = []
+        @Published private var engine: CHHapticEngine?
+        
+        var showDots: Bool {
+            selectedDieSides < 6
+        }
         
         let sides = [2, 4, 6, 8, 10, 12, 20, 100]
         
@@ -35,14 +40,24 @@ extension RollView {
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
             
-            print("Rolls: \(rolls) and Die sides: \(selectedDieSides)")
+            randomize()
+        }
+        
+        func randomize() {
+            var rollValues: [Int] = []
+            range = 1...selectedDieSides
+            
+            for _ in 1...rolls {
+                let value = Int.random(in: range)
+                rollValues.append(value)
+            }
+            
+            let newRoll = Roll(values: rollValues)
         }
         
         init(rolls: Int = 1, selectedDieSides: Int = 6) {
             self.rolls = rolls
             self.selectedDieSides = selectedDieSides
-            
-            self.range = 1...selectedDieSides
         }
     }
 }

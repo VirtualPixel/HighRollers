@@ -42,7 +42,6 @@ struct RollView: View {
                 )
                 .foregroundColor(.black)
                 
-                
                 Spacer()
                 
                 Button {
