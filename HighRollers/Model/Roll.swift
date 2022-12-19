@@ -10,7 +10,7 @@ import Foundation
 struct Roll: Identifiable, Codable {
     var id = UUID()
     var date = Date.now
-    let value: Int
+    let values: [Int]
 }
 
 class Rolls: ObservableObject {
