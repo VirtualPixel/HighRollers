@@ -21,7 +21,6 @@
 		57D97A402947482000F9A921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A3F2947482000F9A921 /* Assets.xcassets */; };
 		57D97A432947482000F9A921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A422947482000F9A921 /* Preview Assets.xcassets */; };
 		57D97A4D294748B600F9A921 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A4C294748B600F9A921 /* Die.swift */; };
-		57FE4FC5294CBE3F00D10C04 /* WrappingHStack in Frameworks */ = {isa = PBXBuildFile; productRef = 57FE4FC4294CBE3F00D10C04 /* WrappingHStack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57FE4FC5294CBE3F00D10C04 /* WrappingHStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +138,6 @@
 			);
 			name = HighRollers;
 			packageProductDependencies = (
-				57FE4FC4294CBE3F00D10C04 /* WrappingHStack */,
 			);
 			productName = HighRollers;
 			productReference = 57D97A382947481F00F9A921 /* HighRollers.app */;
@@ -171,7 +168,6 @@
 			);
 			mainGroup = 57D97A2F2947481F00F9A921;
 			packageReferences = (
-				57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */,
 			);
 			productRefGroup = 57D97A392947481F00F9A921 /* Products */;
 			projectDirPath = "";
@@ -411,25 +407,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/dkk/WrappingHStack";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		57FE4FC4294CBE3F00D10C04 /* WrappingHStack */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 57FE4FC3294CBE3F00D10C04 /* XCRemoteSwiftPackageReference "WrappingHStack" */;
-			productName = WrappingHStack;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 57D97A302947481F00F9A921 /* Project object */;
 }

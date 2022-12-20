@@ -10,9 +10,10 @@ import SwiftUI
 
 extension RollView {
     @MainActor class ViewModel: ObservableObject {
+        
         @Published var range = 1...6
         @Published var maxDie = 1...20
-        @Published var rolls = 1
+        @Published var dieCount = 1
         @Published var selectedDieSides = 6
         //@Published var rollValues: [Roll] = []
         @Published private var engine: CHHapticEngine?
@@ -34,29 +35,29 @@ extension RollView {
                 }
         }
         
-        func roll() {
+        func roll() -> Roll {
             prepareHaptics()
             
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
             
-            randomize()
+            return randomize()
         }
         
-        func randomize() {
+        func randomize() -> Roll {
             var rollValues: [Int] = []
             range = 1...selectedDieSides
             
-            for _ in 1...rolls {
+            for _ in 1...dieCount {
                 let value = Int.random(in: range)
                 rollValues.append(value)
             }
             
-            let newRoll = Roll(values: rollValues)
+            return Roll(values: rollValues, maxRoll: selectedDieSides)
         }
         
-        init(rolls: Int = 1, selectedDieSides: Int = 6) {
-            self.rolls = rolls
+        init(dieCount: Int = 1, selectedDieSides: Int = 6) {
+            self.dieCount = dieCount
             self.selectedDieSides = selectedDieSides
         }
     }

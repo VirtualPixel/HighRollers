@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
-import WrappingHStack
 
 struct ContentView: View {
+    @StateObject var rolls = Rolls()
+    
     var body: some View {
         TabView {
             RollView()
@@ -26,6 +27,7 @@ struct ContentView: View {
                     Label("Settings", systemImage: "gearshape")
                 }
         }
+        .environmentObject(rolls)
     }
 }
 

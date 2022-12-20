@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RollView: View {
+    @EnvironmentObject var rolls: Rolls
     @StateObject private var viewModel: ViewModel
     
     var body: some View {
@@ -20,7 +21,7 @@ struct RollView: View {
                 }
                 .padding()
                 
-                DiceStepper(count: $viewModel.rolls, range: viewModel.maxDie)
+                DiceStepper(count: $viewModel.dieCount, range: viewModel.maxDie)
                 
                 HStack {
                     Text("How many Dice sides")
@@ -45,7 +46,7 @@ struct RollView: View {
                 Spacer()
                 
                 Button {
-                    viewModel.roll()
+                    roll()
                 } label: {
                     Text("Roll")
                         .frame(width: 100, height: 50)
@@ -59,6 +60,10 @@ struct RollView: View {
             }
             .navigationTitle("Roll the Dice")
         }
+    }
+    
+    func roll() {
+        rolls.add(viewModel.roll())
     }
     
     init() {
