@@ -14,7 +14,7 @@ struct HistoryView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(rolls.rolls.sorted(by: viewModel.sortRolls)) { roll in
+                ForEach(rolls.rolls.sorted(by:  viewModel.sortRolls)) { roll in //
                     HStack {
                         Die(result: roll.maxRoll)
                             .frame(width: 70, height: 70)
