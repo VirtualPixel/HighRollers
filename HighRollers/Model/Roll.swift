@@ -20,6 +20,8 @@ struct Roll: Identifiable, Codable {
         
         total = values.reduce(0, +)
     }
+    
+    static let example = Roll(values: [15, 30, 5, 10, 20, 75, 54, 58, 82, 59, 24, 1], maxRoll: 100)
 }
 
 @MainActor class Rolls: ObservableObject {

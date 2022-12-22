@@ -15,18 +15,5 @@ extension HistoryView {
         enum SortType {
             case sum, dateAscending, dateDescending, max
         }
-        
-        func sortRolls(this: Roll, that: Roll) -> Bool {
-            switch sort {
-            case .dateDescending:
-                return this.date > that.date
-            case .dateAscending:
-                return this.date < that.date
-            case .max:
-                return this.maxRoll > that.maxRoll
-            case .sum:
-                return this.total > that.total
-            }
-        }
     }
 }

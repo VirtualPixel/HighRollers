@@ -9,24 +9,28 @@ import SwiftUI
 
 struct HistoryView: View {
     @EnvironmentObject var rolls: Rolls
-    @StateObject private var viewModel: ViewModel
+    @StateObject private var viewModel = ViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(rolls.rolls.sorted(by:  viewModel.sortRolls)) { roll in //
-                    HStack {
-                        Die(result: roll.maxRoll)
-                            .frame(width: 70, height: 70)
-                            .padding(.horizontal, 5)
-                        
-                        Text("\(roll.date.formatted())")
-                        
-                        VStack {
-                            Text("Total:")
-                                .font(.title3.bold())
-                            Text("\(roll.total)")
-                                .bold()
+                ForEach(rolls.rolls.sorted(by: sortRolls)) { roll in
+                    NavigationLink {
+                        DieRolledView(roll: roll)
+                    } label: {
+                        HStack {
+                            Die(result: roll.maxRoll)
+                                .frame(width: 70, height: 70)
+                                .padding(.horizontal, 5)
+                            
+                            Text("\(roll.date.formatted())")
+                            
+                            VStack {
+                                Text("Total:")
+                                    .font(.title3.bold())
+                                Text("\(roll.total)")
+                                    .bold()
+                            }
                         }
                     }
                 }
@@ -53,13 +57,25 @@ struct HistoryView: View {
         }
     }
     
-    init() {
-        _viewModel = StateObject(wrappedValue: ViewModel())
+    func sortRolls(this: Roll, that: Roll) -> Bool {
+        switch viewModel.sort {
+        case .dateDescending:
+            return this.date > that.date
+        case .dateAscending:
+            return this.date < that.date
+        case .max:
+            return this.maxRoll > that.maxRoll
+        case .sum:
+            return this.total > that.total
+        }
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
+    static let rolls = Rolls()
+    
     static var previews: some View {
         HistoryView()
+            .environmentObject(rolls)
     }
 }
