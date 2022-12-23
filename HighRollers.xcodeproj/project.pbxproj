@@ -56,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5775073729565364002A8CC8 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				57D97A4C294748B600F9A921 /* Die.swift */,
+				574CDABC2950948700AD8B14 /* DiceStepper.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		57D97A2F2947481F00F9A921 = {
 			isa = PBXGroup;
 			children = (
@@ -98,11 +107,10 @@
 			children = (
 				57D97A3D2947481F00F9A921 /* ContentView.swift */,
 				5730AF78294CFB6300B0F706 /* RollView.swift */,
-				5789669429546FFA008AF1B8 /* DieRolledView.swift */,
 				5730AF7C294CFD1300B0F706 /* HistoryView.swift */,
 				5730AF80294CFD7900B0F706 /* SettingsView.swift */,
-				57D97A4C294748B600F9A921 /* Die.swift */,
-				574CDABC2950948700AD8B14 /* DiceStepper.swift */,
+				5789669429546FFA008AF1B8 /* DieRolledView.swift */,
+				5775073729565364002A8CC8 /* Elements */,
 			);
 			path = View;
 			sourceTree = "<group>";
