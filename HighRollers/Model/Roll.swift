@@ -25,17 +25,39 @@ struct Roll: Identifiable, Codable {
 }
 
 @MainActor class Rolls: ObservableObject {
+    let savePath = FileManager.documentsDirectory.appendingPathComponent("SaveData")
     @Published private(set) var rolls: [Roll]
     
     init() {        
+        if let data = try? Data(contentsOf: savePath) {
+            if let decoded = try? JSONDecoder().decode([Roll].self, from: data) {
+                rolls = decoded
+                return
+            }
+        }
+        
         rolls = []
     }
     
     private func save() {
-        
+        if let data = try? JSONEncoder().encode(rolls) {
+            try? data.write(to: savePath, options: [.atomic, .completeFileProtection])
+        }
     }
     
     func add(_ roll: Roll) {
+        objectWillChange.send()
         rolls.append(roll)
+        save()
+    }
+    
+    func sort(newOrder: [Roll]) {
+        rolls = newOrder
+    }
+    
+    func remove(at offsets: IndexSet) {
+        objectWillChange.send()
+        rolls.remove(atOffsets: offsets)
+        save()
     }
 }

@@ -14,7 +14,7 @@ struct HistoryView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(rolls.rolls.sorted(by: sortRolls)) { roll in
+                ForEach(rolls.rolls) { roll in
                     NavigationLink {
                         DieRolledView(roll: roll)
                     } label: {
@@ -33,6 +33,9 @@ struct HistoryView: View {
                             }
                         }
                     }
+                }
+                .onDelete { indexSet in
+                    rolls.remove(at: indexSet)
                 }
             }
             .navigationTitle("Roll History")
@@ -54,6 +57,9 @@ struct HistoryView: View {
             } message: {
                 Text("Select the way rolls are sorted")
             }
+        }
+        .onChange(of: viewModel.sort) { newSort in
+            rolls.sort(newOrder: rolls.rolls.sorted(by: sortRolls))
         }
     }
     

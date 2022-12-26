@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570A8EFF295A29FE00322409 /* FileManager-Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A8EFE295A29FE00322409 /* FileManager-Documents.swift */; };
 		5730AF79294CFB6300B0F706 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF78294CFB6300B0F706 /* RollView.swift */; };
 		5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */; };
 		5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7C294CFD1300B0F706 /* HistoryView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570A8EFE295A29FE00322409 /* FileManager-Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Documents.swift"; sourceTree = "<group>"; };
 		5730AF78294CFB6300B0F706 /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RollView-ViewModel.swift"; sourceTree = "<group>"; };
 		5730AF7C294CFD1300B0F706 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570A8EFD295A29DA00322409 /* Data Management */ = {
+			isa = PBXGroup;
+			children = (
+				570A8EFE295A29FE00322409 /* FileManager-Documents.swift */,
+			);
+			path = "Data Management";
+			sourceTree = "<group>";
+		};
 		5775073729565364002A8CC8 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 			children = (
 				575EDA952947CE1800BB550D /* Shape.swift */,
 				579A8A1C294FFC7B00BAB964 /* Roll.swift */,
+				570A8EFD295A29DA00322409 /* Data Management */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570A8EFF295A29FE00322409 /* FileManager-Documents.swift in Sources */,
 				5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */,
 				57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */,
 				57D97A4D294748B600F9A921 /* Die.swift in Sources */,
