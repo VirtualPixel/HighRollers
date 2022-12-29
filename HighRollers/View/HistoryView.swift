@@ -58,7 +58,7 @@ struct HistoryView: View {
                 Text("Select the way rolls are sorted")
             }
         }
-        .onChange(of: viewModel.sort) { newSort in
+        .onChange(of: viewModel.sort) { _ in
             rolls.sort(newOrder: rolls.rolls.sorted(by: sortRolls))
         }
     }
