@@ -60,7 +60,7 @@ struct HistoryView: View {
         }
         .onChange(of: viewModel.sort) { _ in
             rolls.sort(newOrder: rolls.rolls.sorted(by: sortRolls))
-        }
+        } //
     }
     
     func sortRolls(this: Roll, that: Roll) -> Bool {
