@@ -16,10 +16,16 @@ struct DieRolledView: View {
                 Text("Max Roll")
                     .font(.title.bold())
                 Die(result: viewModel.roll.maxRoll)
-                    .frame(width: geo.size.width * 0.7)
+                    .frame(width: geo.size.width * 0.4)
+                
+                Spacer()
+                
+                Text("All Rolls")
+                    .font(.title.bold())
+                DieGridView(roll: viewModel.roll)
                 
             }
-            .padding()
+            .padding(.horizontal)
             .position(x: geo.size.width / 2, y: geo.size.height / 2)
         }
     }

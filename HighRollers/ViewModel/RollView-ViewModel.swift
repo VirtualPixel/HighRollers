@@ -12,10 +12,10 @@ extension RollView {
     @MainActor class ViewModel: ObservableObject {
         
         @Published var range = 1...6
-        @Published var maxDie = 1...20
+        @Published var maxDie = 1...200
         @Published var dieCount = 1
         @Published var selectedDieSides = 6
-        //@Published var rollValues: [Roll] = []
+        @Published var rolledValues: [Int] = []
         @Published private var engine: CHHapticEngine?
         
         var showDots: Bool {
@@ -52,6 +52,8 @@ extension RollView {
                 let value = Int.random(in: range)
                 rollValues.append(value)
             }
+            
+            rolledValues = rollValues
             
             return Roll(values: rollValues, maxRoll: selectedDieSides)
         }

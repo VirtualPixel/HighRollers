@@ -24,6 +24,8 @@
 		57D97A402947482000F9A921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A3F2947482000F9A921 /* Assets.xcassets */; };
 		57D97A432947482000F9A921 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D97A422947482000F9A921 /* Preview Assets.xcassets */; };
 		57D97A4D294748B600F9A921 /* Die.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D97A4C294748B600F9A921 /* Die.swift */; };
+		57E09CCD2960A9F8001AE9A5 /* DieGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E09CCC2960A9F8001AE9A5 /* DieGridView.swift */; };
+		57E09CCF2960AA60001AE9A5 /* DieGridView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E09CCE2960AA60001AE9A5 /* DieGridView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		57D97A3F2947482000F9A921 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D97A422947482000F9A921 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57D97A4C294748B600F9A921 /* Die.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Die.swift; sourceTree = "<group>"; };
+		57E09CCC2960A9F8001AE9A5 /* DieGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieGridView.swift; sourceTree = "<group>"; };
+		57E09CCE2960AA60001AE9A5 /* DieGridView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DieGridView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				57D97A4C294748B600F9A921 /* Die.swift */,
+				57E09CCC2960A9F8001AE9A5 /* DieGridView.swift */,
 				574CDABC2950948700AD8B14 /* DiceStepper.swift */,
 			);
 			path = Elements;
@@ -139,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */,
+				57E09CCE2960AA60001AE9A5 /* DieGridView-ViewModel.swift */,
 				5789669629547A99008AF1B8 /* DieRolledView-ViewModel.swift */,
 				5730AF7E294CFD5200B0F706 /* HistoryView-ViewModel.swift */,
 				5730AF82294CFDD500B0F706 /* SettingsView-ViewModel.swift */,
@@ -223,6 +229,7 @@
 				570A8EFF295A29FE00322409 /* FileManager-Documents.swift in Sources */,
 				5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */,
 				57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */,
+				57E09CCF2960AA60001AE9A5 /* DieGridView-ViewModel.swift in Sources */,
 				57D97A4D294748B600F9A921 /* Die.swift in Sources */,
 				5730AF81294CFD7900B0F706 /* SettingsView.swift in Sources */,
 				5730AF83294CFDD500B0F706 /* SettingsView-ViewModel.swift in Sources */,
@@ -235,6 +242,7 @@
 				579A8A1D294FFC7B00BAB964 /* Roll.swift in Sources */,
 				5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */,
 				575EDA962947CE1800BB550D /* Shape.swift in Sources */,
+				57E09CCD2960A9F8001AE9A5 /* DieGridView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
