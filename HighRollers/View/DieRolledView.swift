@@ -22,7 +22,7 @@ struct DieRolledView: View {
                 
                 Text("All Rolls")
                     .font(.title.bold())
-                DieGridView(roll: viewModel.roll)
+                DieGridView(roll: viewModel.roll, dieCount: viewModel.roll.values.count)
                 
             }
             .padding(.horizontal)

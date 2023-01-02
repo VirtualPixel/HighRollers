@@ -44,8 +44,8 @@ struct RollView: View {
                     )
                     .foregroundColor(.black)
                     
-                    //DieGridView(roll: viewModel.rolledValues)
-                    //    .padding()
+                    DieGridView(roll: Roll(values: viewModel.rolledValues, maxRoll: viewModel.selectedDieSides), dieCount: viewModel.dieCount)
+                        .padding()
                     
                     Spacer()
                     
