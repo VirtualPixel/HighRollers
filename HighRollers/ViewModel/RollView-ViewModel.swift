@@ -36,8 +36,6 @@ extension RollView {
         }
         
         func roll() -> Roll {
-            prepareHaptics()
-            
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.error)
             
@@ -61,6 +59,6 @@ extension RollView {
         init(dieCount: Int = 1, selectedDieSides: Int = 6) {
             self.dieCount = dieCount
             self.selectedDieSides = selectedDieSides
-        }
+        }//
     }
 }

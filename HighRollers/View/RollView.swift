@@ -65,7 +65,6 @@ struct RollView: View {
             }
             .navigationTitle("Roll the Dice")
         }
-
     }
     
     func roll() {
