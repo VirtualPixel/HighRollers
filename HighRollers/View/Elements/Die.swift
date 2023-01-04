@@ -18,23 +18,23 @@ struct Die: View, Identifiable {
             LinearGradient(colors: dieColor, startPoint: .topLeading, endPoint: .bottomTrailing)
                 .frame(width: geo.size.width, height: geo.size.width)
                 .overlay(
-                    Group {
-                        RoundedRectangle(cornerRadius: 100)
-                            .fill(Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)))
-                            .padding(30)
-                            .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 13)
-                            .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
-                            .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
-                            .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
+                    RoundedRectangle(cornerRadius: 100)
+                        .fill(Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)))
+                        .padding(30)
+                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 13)
+                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
+                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
+                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
+                        .frame(width: geo.size.width, height: geo.size.width)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: 7)
                             .frame(width: geo.size.width, height: geo.size.width)
-                        
-                        RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: 7)
-                            .frame(width: geo.size.width, height: geo.size.width)
-                        
-                        DieResult(number: result, isNumeric: isNumeric, dotWidth: geo.size.width * 0.2)
-                    }
+                        )
+                        .overlay(
+                            DieResult(number: result, isNumeric: isNumeric, dotWidth: geo.size.width * 0.2)
+                        )
                 )
-                .position(x: geo.size.width / 2, y: geo.size.height / 2)
+        .position(x: geo.size.width / 2, y: geo.size.height / 2)
         }
     }
 }
