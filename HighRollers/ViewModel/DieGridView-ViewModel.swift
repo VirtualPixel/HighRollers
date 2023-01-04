@@ -8,10 +8,9 @@
 import SwiftUI
 
 extension DieGridView {
-    @MainActor class ViewModel: ObservableObject {
-        let roll: Roll
+    class ViewModel: ObservableObject {
+        @Published var roll: Roll
         let dieCount: Int
-        
         
         let adaptiveColumns = [
             GridItem(.adaptive(minimum: 80))

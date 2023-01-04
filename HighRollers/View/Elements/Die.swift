@@ -18,7 +18,7 @@ struct Die: View, Identifiable {
             LinearGradient(colors: dieColor, startPoint: .topLeading, endPoint: .bottomTrailing)
                 .frame(width: geo.size.width, height: geo.size.width)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 100)
+                    RoundedRectangle(cornerRadius: (geo.size.width * 0.25))
                         .fill(Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)))
                         .padding(30)
                         .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 13)
@@ -27,8 +27,9 @@ struct Die: View, Identifiable {
                         .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
                         .frame(width: geo.size.width, height: geo.size.width)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: 7)
+                            RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: (geo.size.width * 0.025))
                             .frame(width: geo.size.width, height: geo.size.width)
+                            
                         )
                         .overlay(
                             DieResult(number: result, isNumeric: isNumeric, dotWidth: geo.size.width * 0.2)
@@ -51,36 +52,39 @@ struct DieResult: View {
     let dotWidth: CGFloat
     
     var body: some View {
-        Group {
-            switch isNumeric {
-            case true:
-                Text("\(number)")
-                    .foregroundColor(.black)
-            case false:
-                switch number {
-                case 1:
-                    dot()
-                case 2:
-                    two()
-                case 3:
-                    three()
-                case 4:
-                    four()
-                case 5:
-                    five()
-                case 6:
-                    six()
-                default:
+            Group {
+                if isNumeric {
                     Text("\(number)")
                         .foregroundColor(.black)
+                } else {
+                    dotsForNumber(number)
                 }
             }
+            .font(.system(size: 1000))
+            .minimumScaleFactor(0.005)
+            .font(.title).bold()
+            .padding(dotWidth * 0.7)
         }
-        .font(.system(size: 1000))
-        .minimumScaleFactor(0.005)
-        .font(.title).bold()
-        .padding(dotWidth * 0.7)
-    }
+
+    func dotsForNumber(_ number: Int) -> some View {
+            switch number {
+            case 1:
+                return AnyView(dot())
+            case 2:
+                return AnyView(two())
+            case 3:
+                return AnyView(three())
+            case 4:
+                return AnyView(four())
+            case 5:
+                return AnyView(five())
+            case 6:
+                return AnyView(six())
+            default:
+                return AnyView(Text("\(number)")
+                    .foregroundColor(.black))
+            }
+        }
     
     @ViewBuilder func two() -> some View {
         VStack {

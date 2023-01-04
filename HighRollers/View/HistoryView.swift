@@ -25,6 +25,8 @@ struct HistoryView: View {
                             
                             Text("\(roll.date.formatted())")
                             
+                            Spacer()
+                            
                             VStack {
                                 Text("Total:")
                                     .font(.title3.bold())

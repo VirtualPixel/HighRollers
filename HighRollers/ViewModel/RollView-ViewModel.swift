@@ -14,8 +14,17 @@ extension RollView {
         @Published var range = 1...6
         @Published var maxDie = 1...200
         @Published var dieCount = 1
-        @Published var selectedDieSides = 6
-        @Published var rolledValues: [Int] = []
+        @Published var selectedDieSides = 6 {
+            didSet {
+                updateRollIcon()
+            }
+        }
+        @Published var rolledValues: [Int] = [] {
+            didSet {
+                updateRollIcon()
+            }
+        }
+        @Published var rollIcon: Roll
         @Published private var engine: CHHapticEngine?
         
         var showDots: Bool {
@@ -33,6 +42,10 @@ extension RollView {
                 } catch {
                     print("There was an error creating the engine: \(error.localizedDescription)")
                 }
+        }
+        
+        func updateRollIcon() {
+            rollIcon = Roll(values: rolledValues, maxRoll: selectedDieSides)
         }
         
         func roll() -> Roll {
@@ -56,9 +69,14 @@ extension RollView {
             return Roll(values: rollValues, maxRoll: selectedDieSides)
         }
         
+        func reset() {
+            
+        }
+        
         init(dieCount: Int = 1, selectedDieSides: Int = 6) {
             self.dieCount = dieCount
             self.selectedDieSides = selectedDieSides
+            self.rollIcon = Roll(values: [], maxRoll: selectedDieSides)
         }
     }
 }

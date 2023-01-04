@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DieGridView: View {
     @Binding private var dieCount: Int
-    @StateObject private var viewModel: ViewModel
+    @Binding private var maxRoll: Int
+    @ObservedObject private var viewModel: ViewModel
     
     var body: some View {
         ScrollView {
@@ -24,17 +25,19 @@ struct DieGridView: View {
         }
     }
     
-    init(roll: Roll, dieCount: Binding<Int>) {
-        _dieCount = dieCount
-        _viewModel = StateObject(wrappedValue: ViewModel(roll: roll, dieCount: dieCount.wrappedValue))
-    }
+    init(roll: Roll, dieCount: Binding<Int>, maxRoll: Binding<Int>) {
+            _dieCount = dieCount
+            _maxRoll = maxRoll
+            _viewModel = ObservedObject(wrappedValue: ViewModel(roll: roll, dieCount: dieCount.wrappedValue))
+        }
 }
 
 struct DieGridView_Previews: PreviewProvider {
     @State static var dieCount = Roll.example.values.count
+    @State static var maxRoll = Roll.example.maxRoll
     
     static var previews: some View {
         let roll = Roll.example
-        return DieGridView(roll: roll, dieCount: $dieCount)
+        return DieGridView(roll: roll, dieCount: $dieCount, maxRoll: $maxRoll)
     }
 }
