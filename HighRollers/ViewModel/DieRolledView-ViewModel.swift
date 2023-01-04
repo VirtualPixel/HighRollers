@@ -9,7 +9,7 @@ import Foundation
 
 extension DieRolledView {
     @MainActor class ViewModel: ObservableObject {
-        let roll: Roll
+        var roll: Roll
         
         init(roll: Roll) {
             self.roll = roll

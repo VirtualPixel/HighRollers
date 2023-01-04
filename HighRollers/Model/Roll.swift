@@ -10,7 +10,7 @@ import Foundation
 struct Roll: Identifiable, Codable {
     var id = UUID()
     var date = Date.now
-    let values: [Int]
+    var values: [Int]
     let maxRoll: Int
     let total: Int
     

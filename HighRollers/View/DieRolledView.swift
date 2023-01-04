@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DieRolledView: View {
     @StateObject private var viewModel: ViewModel
+    @State private var dieCount: Int
     
     var body: some View {
         GeometryReader { geo in
@@ -22,7 +23,7 @@ struct DieRolledView: View {
                 
                 Text("All Rolls")
                     .font(.title.bold())
-                DieGridView(roll: viewModel.roll, dieCount: viewModel.roll.values.count)
+                DieGridView(roll: viewModel.roll, dieCount: $dieCount)
                 
             }
             .padding(.horizontal)
@@ -32,6 +33,7 @@ struct DieRolledView: View {
     
     init(roll: Roll) {
         _viewModel = StateObject(wrappedValue: ViewModel(roll: roll))
+        _dieCount = State(initialValue: roll.values.count)
     }
 }
 
