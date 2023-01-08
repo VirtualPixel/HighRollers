@@ -12,7 +12,10 @@ struct DiceStepper: View {
     @Environment(\.colorScheme) var colorScheme
     @Binding var count: Int
     @State private var engine: CHHapticEngine?
+    @State private var timer: Timer?
     let range: ClosedRange<Int>
+    let longPressGesture = LongPressGesture(minimumDuration: 0.2)
+    let dragGesture = DragGesture()
     
     var unit: String {
         count == 1 ? "die" : "dice"
@@ -28,7 +31,10 @@ struct DiceStepper: View {
             } label: {
                 Text("-")
                     .stepperButtonStyle()
+                    .gesture(longPressGesture)
+                    .gesture(dragGesture)
             }
+            
             
             Spacer()
             

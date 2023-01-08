@@ -11,7 +11,7 @@ struct Die: View, Identifiable {
     var id = UUID()
     var result = Int.random(in: 1...10)
     var isNumeric = false
-    let dieColor: [Color] = [Color(UIColor(red: 0.97, green: 0.96, blue: 0.93, alpha: 1.00)), Color(UIColor(red: 0.84, green: 0.81, blue: 0.69, alpha: 1.00)), Color(UIColor(red: 0.42, green: 0.38, blue: 0.27, alpha: 1.00))]
+    let dieColor = Color.whiteDie
     
     var body: some View {
         GeometryReader { geo in
@@ -19,15 +19,15 @@ struct Die: View, Identifiable {
                 .frame(width: geo.size.width, height: geo.size.width)
                 .overlay(
                     RoundedRectangle(cornerRadius: (geo.size.width * 0.25))
-                        .fill(Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)))
-                        .padding(30)
-                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 13)
-                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
-                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
-                        .shadow(color: Color(UIColor(red: 0.93, green: 0.90, blue: 0.81, alpha: 1.00)), radius: 0)
+                        .fill(Color.whiteDieShadow)
+                        .padding(geo.size.width * 0.07)
+                        .shadow(color: Color.whiteDieShadow, radius: geo.size.width * 0.03)
+                        .shadow(color: Color.whiteDieShadow, radius: 0)
+                        .shadow(color: Color.whiteDieShadow, radius: 0)
+                        .shadow(color: Color.whiteDieShadow, radius: 0)
                         .frame(width: geo.size.width, height: geo.size.width)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: (geo.size.width * 0.025))
+                            RoundedRectangle(cornerRadius: geo.size.width * 0.1).stroke(Color.black, lineWidth: (geo.size.width * 0.025))
                             .frame(width: geo.size.width, height: geo.size.width)
                             .clipShape(RoundedRectangle(cornerRadius: (geo.size.width * 0.10)))
                         )
