@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RollView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var rolls: Rolls
     @StateObject private var viewModel: ViewModel
     
@@ -32,18 +33,20 @@ struct RollView: View {
                         }
                         .padding()
                         
-                        Picker("Pick the number of sides on each die", selection: $viewModel.selectedDieSides) {
+                        Picker(selection: $viewModel.selectedDieSides, label: Text("Pick the number of sides on each die")) {
                             ForEach(viewModel.sides, id: \.self) { side in
                                 Text("\(side) sided")
+                                    .foregroundColor(colorScheme == .dark ? .white : .black)
                             }
                         }
-                        .frame(width: 300, height: 60)
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.white)
-                                .shadow(radius: 4)
-                        )
-                        .foregroundColor(.black)
+                        .frame(width: 300, height: 150)
+                        .background(RoundedRectangle(cornerRadius: 10).foregroundColor(colorScheme == .dark ? .black : .white))
+                        .shadow(color: colorScheme == .dark ? .white : .gray, radius: 4)
+                        .onChange(of: viewModel.selectedDieSides) { _ in
+                            viewModel.reset()
+                        }
+                        .pickerStyle(.wheel)
+                        
                         
                         DieGridView(roll: Roll(values: viewModel.rolledValues, maxRoll: viewModel.selectedDieSides), dieCount: $viewModel.dieCount, maxRoll: $viewModel.selectedDieSides)
                             .padding()

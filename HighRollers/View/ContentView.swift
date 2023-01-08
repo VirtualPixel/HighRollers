@@ -21,11 +21,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("History", systemImage: "book")
                 }
-            
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
         }
         .environmentObject(rolls)
     }

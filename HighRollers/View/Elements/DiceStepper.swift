@@ -9,6 +9,7 @@ import CoreHaptics
 import SwiftUI
 
 struct DiceStepper: View {
+    @Environment(\.colorScheme) var colorScheme
     @Binding var count: Int
     @State private var engine: CHHapticEngine?
     let range: ClosedRange<Int>
@@ -50,8 +51,8 @@ struct DiceStepper: View {
         .frame(width: 300, height: 60)
         .background(
             RoundedRectangle(cornerRadius: 10)
-                .foregroundColor(.white)
-                .shadow(radius: 4)
+                .foregroundColor(colorScheme == .dark ? .black : .white )
+                .shadow(color: colorScheme == .dark ? .white : .gray, radius: 4)
         )
     }
     
@@ -102,7 +103,7 @@ struct StepperButton: ViewModifier {
         .font(.system(size: 500))
         .minimumScaleFactor(0.01)
         .font(.title.bold())
-        .foregroundColor(.black)
+        .foregroundColor(.secondary)
         .frame(maxWidth: .infinity)
     }
 }

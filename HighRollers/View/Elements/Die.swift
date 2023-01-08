@@ -29,12 +29,14 @@ struct Die: View, Identifiable {
                         .overlay(
                             RoundedRectangle(cornerRadius: 9).stroke(Color.black, lineWidth: (geo.size.width * 0.025))
                             .frame(width: geo.size.width, height: geo.size.width)
-                            
+                            .clipShape(RoundedRectangle(cornerRadius: (geo.size.width * 0.10)))
                         )
                         .overlay(
                             DieResult(number: result, isNumeric: isNumeric, dotWidth: geo.size.width * 0.2)
                         )
+                    
                 )
+                .clipShape(RoundedRectangle(cornerRadius: (geo.size.width * 0.10)))
         .position(x: geo.size.width / 2, y: geo.size.height / 2)
         }
     }

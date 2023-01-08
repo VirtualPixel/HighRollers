@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570425BC296A5C6D00E0F66F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570425BB296A5C6D00E0F66F /* Colors.swift */; };
 		570A8EFF295A29FE00322409 /* FileManager-Documents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A8EFE295A29FE00322409 /* FileManager-Documents.swift */; };
 		5730AF79294CFB6300B0F706 /* RollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF78294CFB6300B0F706 /* RollView.swift */; };
 		5730AF7B294CFB8400B0F706 /* RollView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570425BA296A58E500E0F66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		570425BB296A5C6D00E0F66F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		570A8EFE295A29FE00322409 /* FileManager-Documents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-Documents.swift"; sourceTree = "<group>"; };
 		5730AF78294CFB6300B0F706 /* RollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollView.swift; sourceTree = "<group>"; };
 		5730AF7A294CFB8400B0F706 /* RollView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RollView-ViewModel.swift"; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		57D97A3A2947481F00F9A921 /* HighRollers */ = {
 			isa = PBXGroup;
 			children = (
+				570425BA296A58E500E0F66F /* Info.plist */,
 				57D97A3B2947481F00F9A921 /* HighRollersApp.swift */,
 				57D97A4A2947486100F9A921 /* Model */,
 				57D97A492947485A00F9A921 /* View */,
@@ -133,6 +137,7 @@
 		57D97A4A2947486100F9A921 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				570425BB296A5C6D00E0F66F /* Colors.swift */,
 				575EDA952947CE1800BB550D /* Shape.swift */,
 				579A8A1C294FFC7B00BAB964 /* Roll.swift */,
 				570A8EFD295A29DA00322409 /* Data Management */,
@@ -227,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570A8EFF295A29FE00322409 /* FileManager-Documents.swift in Sources */,
+				570425BC296A5C6D00E0F66F /* Colors.swift in Sources */,
 				5730AF7D294CFD1300B0F706 /* HistoryView.swift in Sources */,
 				57D97A3E2947481F00F9A921 /* ContentView.swift in Sources */,
 				57E09CCF2960AA60001AE9A5 /* DieGridView-ViewModel.swift in Sources */,
@@ -374,7 +380,7 @@
 				DEVELOPMENT_TEAM = 3LPAZYKA42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = HighRollers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -403,7 +409,7 @@
 				DEVELOPMENT_TEAM = 3LPAZYKA42;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = HighRollers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

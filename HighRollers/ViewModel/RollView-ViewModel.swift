@@ -11,9 +11,13 @@ import SwiftUI
 extension RollView {
     @MainActor class ViewModel: ObservableObject {
         
-        @Published var range = 1...6
-        @Published var maxDie = 1...200
-        @Published var dieCount = 1
+        @Published var range: ClosedRange<Int> = 1...6
+        @Published var maxDie: ClosedRange<Int> = 1...200
+        @Published var dieCount = 1 {
+            didSet {
+                reset()
+            }
+        }
         @Published var selectedDieSides = 6 {
             didSet {
                 updateRollIcon()
@@ -70,7 +74,7 @@ extension RollView {
         }
         
         func reset() {
-            
+            rolledValues = []
         }
         
         init(dieCount: Int = 1, selectedDieSides: Int = 6) {

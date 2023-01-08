@@ -51,8 +51,8 @@ struct HistoryView: View {
                 }
             }
             .confirmationDialog("Sort People", isPresented: $viewModel.showingConfirmation) {
-                Button("Date in descending order") { viewModel.sort = .dateDescending }
-                Button("Date in ascending order") { viewModel.sort = .dateAscending }
+                Button("Sort by Date (Ascending)") { viewModel.sort = .dateAscending }
+                Button("Sort by Date (Desending") { viewModel.sort = .dateDescending }
                 Button("Max possible roll") { viewModel.sort = .max }
                 Button("Total sum of each roll") { viewModel.sort = .sum }
                 Button("Cancel", role: .cancel) {  }
@@ -61,20 +61,7 @@ struct HistoryView: View {
             }
         }
         .onChange(of: viewModel.sort) { _ in
-            rolls.sort(newOrder: rolls.rolls.sorted(by: sortRolls))
-        }
-    }
-    
-    func sortRolls(this: Roll, that: Roll) -> Bool {
-        switch viewModel.sort {
-        case .dateDescending:
-            return this.date > that.date
-        case .dateAscending:
-            return this.date < that.date
-        case .max:
-            return this.maxRoll > that.maxRoll
-        case .sum:
-            return this.total > that.total
+            rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
         }
     }
 }
