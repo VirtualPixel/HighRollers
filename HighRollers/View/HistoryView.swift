@@ -51,16 +51,28 @@ struct HistoryView: View {
                 }
             }
             .confirmationDialog("Sort People", isPresented: $viewModel.showingConfirmation) {
-                Button("Sort by Date (Ascending)") { viewModel.sort = .dateAscending }
-                Button("Sort by Date (Desending") { viewModel.sort = .dateDescending }
-                Button("Max possible roll") { viewModel.sort = .max }
-                Button("Total sum of each roll") { viewModel.sort = .sum }
+                Button("Sort by Date (Desending)") {
+                    viewModel.sort = .dateDescending
+                    rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
+                }
+                Button("Sort by Date (Ascending)") {
+                    viewModel.sort = .dateAscending
+                    rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
+                }
+                Button("Max possible roll") {
+                    viewModel.sort = .max
+                    rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
+                }
+                Button("Total sum of each roll") {
+                    viewModel.sort = .sum
+                    rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
+                }
                 Button("Cancel", role: .cancel) {  }
             } message: {
                 Text("Select the way rolls are sorted")
             }
         }
-        .onChange(of: viewModel.sort) { _ in
+        .onAppear {
             rolls.sort(newOrder: rolls.rolls.sorted(by: viewModel.sortRolls))
         }
     }
